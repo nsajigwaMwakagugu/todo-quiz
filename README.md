@@ -1,13 +1,6 @@
-[![Build Status](https://travis-ci.org/hisptz/ngx-seed-app.svg?branch=master)](https://travis-ci.org/hisptz/ngx-seed-app)
-[![dependencies Status](https://david-dm.org/hisptz/ngx-seed-app/status.svg)](https://david-dm.org/hisptz/ngx-seed-app)
-[![devDependencies Status](https://david-dm.org/hisptz/ngx-seed-app/dev-status.svg)](https://david-dm.org/hisptz/ngx-seed-app?type=dev)
-[![Maintainability](https://api.codeclimate.com/v1/badges/dbe97dbdfbd55344c38f/maintainability)](https://codeclimate.com/github/hisptz/ngx-seed-app/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/dbe97dbdfbd55344c38f/test_coverage)](https://codeclimate.com/github/hisptz/ngx-seed-app/test_coverage)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Greenkeeper badge](https://badges.greenkeeper.io/hisptz/ngx-seed-app.svg)](https://greenkeeper.io/)
+# TODO LIST DHIS2 based seed app
 
-# Angular DHIS2 based seed app
-
-Boilerplate codes to fast track developing DHIS2 applications based on Angular framework
+Boilerplate codes to fast track developing TODO LIST applications based on Angular framework
 
 ## Prerequisites
 
@@ -17,17 +10,15 @@ Boilerplate codes to fast track developing DHIS2 applications based on Angular f
 
 ## Setup
 
-Clone repository
-
-```bash
- git clone https://github.com/hisptz/ngx-seed-app.git
-```
+Fork repository this repository to your account
 
 Navigate to application root folder
 
 ```bash
-cd ngx-seed-app
+cd todo-list
 ```
+
+**NOTE**: Folder name may depend on how named your application folder
 
 Install all required dependencies for the app
 
@@ -48,13 +39,13 @@ This command will require proxy-config.json file available in the root of your s
 ```json
 {
   "/api": {
-    "target": "https://play.dhis2.org/2.29/",
+    "target": "https://play.dhis2.org/2.32",
     "secure": "false",
     "auth": "admin:district",
     "changeOrigin": "true"
   },
   "/": {
-    "target": "https://play.dhis2.org/2.29/",
+    "target": "https://play.dhis2.org/2.32",
     "secure": "false",
     "auth": "admin:district",
     "changeOrigin": "true"
@@ -63,33 +54,6 @@ This command will require proxy-config.json file available in the root of your s
 ```
 
 We have provided `proxy-config.example.json` file as an example, make a copy and rename to `proxy-config.json`
-
-## Index DB Setup
-
-This app support index DB as based on [dexie library](https://dexie.org/). In order to initiatiate index db then you have to passed index db configuration in forRoot of core module, so in app.module.ts
-
-```ts
-........
-@NgModule({
-  declarations: [AppComponent, ...fromPages.pages],
-  imports: [
-   ..........
-    CoreModule.forRoot({
-      namespace: 'iapps',
-      version: 1,
-      models: {
-        users: 'id',
-        dataElement: 'id',
-        .......
-      }
-    })
-    .......
-    ]
-    ......
-    })
-```
-
-where in the models, for example user will be a table "user" and 'id' will be a keyIndex for the table
 
 ## Build
 
